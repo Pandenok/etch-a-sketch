@@ -1,0 +1,108 @@
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    width: 100vw;
+    margin:0;
+}
+
+#b-g {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("etch-a-sketch-transparent.png") no-repeat center center;
+    padding: 0px;
+    height: 100%;
+    background-size: 1100px 800px;
+    background-color:lightgray;
+    padding-bottom: 40px;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 790px;
+    height: 490px;
+    background-color: white;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+#controls-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin-left: 10px;
+    width: 130px;
+}
+
+#controls-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
+    width: 130px;
+}
+
+.btn {
+    width: 100px;
+	height: 100px;
+	background-color: #999;
+	background-image: linear-gradient(180deg, #CCC, #999);
+    font-size: 16px;
+    font-weight: bold;
+	border-top: 3px solid #CCC;
+	border-right: 3px solid #CCC;
+	border-left: 4px solid #666;
+	border-bottom: 4px solid #666;
+	border-radius: 20%;
+	text-decoration: none;
+	transition: box-shadow 0.3s,
+				border-top 0.3s,
+				border-right 0.3s;
+}
+
+.btn:hover, .btn:focus {
+	box-shadow: .1em -.1em 0 #333,
+				.2em -.2em 0 #333,
+				-.1em .1em 0 #333,
+				-.2em .2em 0 #333,
+				-.3em .3em 0 #333,
+				inset -.1em -.1em 2em #FFF,
+				-.1em -.1em 2em #666;
+	border-top: 3px solid #666;
+	border-right: 3px solid #666;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), minmax(0, 1fr));
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    border-radius: 30px;
+    padding: 5px;
+    width: 460px;
+    height: 460px;
+}
+  
+.grid-item {
+    padding-top: 100%; /* padding trick directly on the grid item */
+    box-sizing: border-box;
+    position: relative;
+}
+
+footer {
+    align-self: center;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 50px;
+    background-color: #f2f2f2;
+}
