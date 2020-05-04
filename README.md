@@ -106,12 +106,19 @@ The idea to create a function to clear completely the grid without changing the 
 
 ## Future Improvements
 After I'd already finished the project I started to explore some other student solutions at the Odin Project's assignment page for this project. I found the solution of @Saranoya (aka @Hade) which was impacted by the solution of @Nguyen. Thank you, girls, for the ispiration! There is also @aaraon-contreras's version, which I liked a lot! So here is the list of the things I’d love to implement in near future.
+
     - [ ] no scroll
+
     - [ ] how-to use this tool
+
     - [ ] single color – dynamic choice with color palette
+
     - [ ] selector: hide/show grid
+
     - [ ] selector: hover/click to draw
+
     - [ ] links directly on the page to The Odin Project and GitHub Repo
+
     - [ ] size of the grid with the button and not with prompt
 
 ### Found Bugs by Community
