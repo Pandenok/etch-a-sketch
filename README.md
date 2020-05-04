@@ -10,8 +10,8 @@ It is designed to be reminiscent of an Etch-a-Sketch, and its goal is to flex DO
 
 - Q’s: how to avoid page scroll
 - Don’t forget footer “Made by XXX for The Odin Project” hyperlinked to the GitHub Repo.
-- Take time to think about your layout. Seriously: take time and draw it on paper! Only after that create <div>’s for all the elements. It will help you to overlay the page better and not to waste time to redo it after.
-- Remember: on <button> you can use `class` attribute and `type` as well. It’s makes easier it after in CSS styling. 
+- Take time to think about your layout. Seriously: take time and draw it on paper! Only after that create `div`’s for all the elements. It will help you to overlay the page better and not to waste time to redo it after.
+- Remember: on `button` you can use `class` attribute and `type` as well. It’s makes easier it after in CSS styling. 
 
 ## CSS
 
@@ -30,7 +30,7 @@ It is designed to be reminiscent of an Etch-a-Sketch, and its goal is to flex DO
     grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
 }
 ```
-```css
+```javascript
 const container = document.querySelector("#container");
 
 function makeGrid(newSize) {
@@ -46,7 +46,7 @@ To keep an element a square its height and width should be the same and why e.g.
 
 The second part, when it comes to its content, it needs in this case to be absolute positioned, so it doesn’t affect the square-s content, or else the padding calculation would need to also take that into account. 
 
-```javascript
+```css
 .grid-item {
     padding-top: 100%; /* padding trick directly on the grid item */
     box-sizing: border-box;
@@ -55,13 +55,17 @@ The second part, when it comes to its content, it needs in this case to be absol
 ```
 ### How to prevent content from expanding its parent container
 When I was trying to incorporate the grid container in the background image of Etch-a-Sketch game found in the web, unfortunately I was not meeting the following spec of the project: *“Once entered the new grid should be generated in the same total space as before”*. A new grid was overflowing out of its parent. Here are a couple of solutions from StackOverflow
+
 [The solution that operates at the grid item level.](https://stackoverflow.com/questions/43311943/prevent-content-from-expanding-grid-items)
+
 By default, a grid item cannot be smaller than the size of its content. Grid items have an initial size of `min-width: auto` and `min-height: auto`. You can override this behavior by setting grid items to min-width: 0, min-height: 0 or `overflow` with any value other than `visible`.
+
 [Container level solution](https://stackoverflow.com/questions/52861086/how-come-minmax0-1fr-works-for-long-elements-while-1fr-doesnt)
+
 `1fr` is equivalent to `minmax(auto, 1fr)`, by default. When you use `minmax(0, 1fr)`, that's something different than standalone `1fr`. In the first case, the track cannot be smaller than the size of the grid item (min size is `auto`). In the second case, the track is free to resize to a 0 width/height.
 I tested both of them and both worked out, however in my code I prefered to use container lvl solution. 
 
-```javascript
+```css
 #container {
 
     display: grid;
@@ -82,7 +86,7 @@ The first challenge was to create a new grid with prompt parameters from user: I
         container.removeChild(container.firstChild);
     }
 ```
-### Random color Generator
+### Random Color Generator
 ```javascript
 "#" + (Math.floor(Math.random()*16777215).toString(16)
 ```
@@ -102,16 +106,16 @@ The idea to create a function to clear completely the grid without changing the 
 
 ## Future Improvements
 After I'd already finished the project I started to explore some other student solutions at the Odin Project's assignment page for this project. I found the solution of @Saranoya (aka @Hade) which was impacted by the solution of @Nguyen. Thank you, girls, for the ispiration! There is also @aaraon-contreras's version, which I liked a lot! So here is the list of the things I’d love to implement in near future.
-    • [] no scroll
-    • [] how-to use this tool
-    • [] single color – dynamic choice with color palette
-    • [] selector: hide/show grid
-    • [] selector: hover/click to draw
-    • [] links directly on the page to The Odin Project and GitHub Repo
-    • [] size of the grid with the button and not with prompt
+    - [ ] no scroll
+    - [ ] how-to use this tool
+    - [ ] single color – dynamic choice with color palette
+    - [ ] selector: hide/show grid
+    - [ ] selector: hover/click to draw
+    - [ ] links directly on the page to The Odin Project and GitHub Repo
+    - [ ] size of the grid with the button and not with prompt
 
 ### Found Bugs by Community
-    - [] It doesn't check that I've actually filled something out in the prompt when changing dimensions, though when I leave it blank I can't draw at all anymore after that (@Saranoya)
+    - [ ] It doesn't check that I've actually filled something out in the prompt when changing dimensions, though when I leave it blank I can't draw at all anymore after that (@Saranoya)
 
 
 
